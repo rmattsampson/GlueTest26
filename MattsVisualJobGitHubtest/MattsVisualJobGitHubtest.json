@@ -1,0 +1,39 @@
+{
+  "name" : "MattsVisualJobGitHubtest",
+  "description" : "",
+  "role" : "arn:aws:iam::591231672338:role/mattsreallyjunkrole",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "glueetl",
+    "scriptLocation" : "s3://aws-glue-assets-591231672338-us-east-1/scripts/MattsVisualJobGitHubtest.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-metrics" : "true",
+    "--enable-spark-ui" : "true",
+    "--spark-event-logs-path" : "s3://aws-glue-assets-591231672338-us-east-1/sparkHistoryLogs/",
+    "--enable-job-insights" : "false",
+    "--enable-glue-datacatalog" : "true",
+    "--enable-continuous-cloudwatch-log" : "true",
+    "--job-bookmark-option" : "job-bookmark-disable",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-591231672338-us-east-1/temporary/"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 10,
+  "timeout" : 2880,
+  "maxCapacity" : 10.0,
+  "glueVersion" : "4.0",
+  "numberOfWorkers" : 10,
+  "workerType" : "G.1X",
+  "executionClass" : "STANDARD",
+  "codeGenConfigurationNodes" : "{\"node-1694809835157\":{\"S3CsvSource\":{\"AdditionalOptions\":{\"EnableSamplePath\":false,\"SamplePath\":\"s3://hiphopfrom80sand90s/HipHopAlbumsFrom80sAnd90s.csv\"},\"Escaper\":\"\",\"Exclusions\":[],\"Name\":\"Amazon S3\",\"OptimizePerformance\":false,\"Paths\":[\"s3://hiphopfrom80sand90s/HipHopAlbumsFrom80sAnd90s.csv\"],\"QuoteChar\":\"quote\",\"Recurse\":true,\"Separator\":\"comma\",\"WithHeader\":true}}}",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "GlueTest26",
+    "branch" : "main",
+    "folder" : "MattsVisualJobGitHubtest"
+  }
+}
